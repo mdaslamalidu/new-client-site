@@ -16,7 +16,7 @@ function App() {
     const form = event.target;
     const name = form.name.value;
     const email = form.email.value;
-    const user= {name, email}
+    const user = { name, email }
 
     fetch("http://localhost:5000/users", {
       method: "POST",
@@ -25,13 +25,13 @@ function App() {
       },
       body: JSON.stringify(user)
     })
-    .then(res => res.json())
-    .then(data => {
-      const newUser = [...users, data]
-      console.log(newUser)
-      setUsers(newUser)
-    })
-    .catch(err => console.error(err))
+      .then(res => res.json())
+      .then(data => {
+        const newUser = [...users, data]
+        console.log(newUser)
+        setUsers(newUser)
+      })
+      .catch(err => console.error(err))
     form.reset()
   }
 
@@ -42,9 +42,9 @@ function App() {
 
       <form onSubmit={handleSubmit}>
         <input type="text" name="name" id="" />
-        <br/>
+        <br />
         <input type="email" name="email" id="" />
-        <br/>
+        <br />
         <button type="submit">Add User</button>
       </form>
 
@@ -52,7 +52,8 @@ function App() {
       {
         users.map(user => <p key={user.id}>
           {user.name}
-          </p>)
+          {user.email}
+        </p>)
       }
     </div>
   );
