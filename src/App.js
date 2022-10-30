@@ -52,7 +52,7 @@ function App() {
       {
         users.map(user => <p key={user._id}>
           {user.email}
-          {user.name}
+          {user.password}
         </p>)
       }
     </div>
