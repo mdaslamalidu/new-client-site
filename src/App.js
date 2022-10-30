@@ -51,9 +51,8 @@ function App() {
       <h3>Users: {users.length}</h3>
       {
         users.map(user => <p key={user._id}>
-          {user.name}
           {user.email}
-          {user.password}
+          {user.name}
         </p>)
       }
     </div>
